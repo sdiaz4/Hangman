@@ -25,7 +25,7 @@ namespace hangman {
 		string secretWord = input.secretWord();
 		
 
-		while (secretWord != "quit") {
+		
 			vector<char> rightLetter;
 			bool gameOver = false;
 			int mistakes = 0;
@@ -92,12 +92,6 @@ namespace hangman {
 					output.lost(secretWord);
 					gameOver = true;
 				}
-
-			}
-			
-			difficulty = input.difficulty();
-			secretWord = input.secretWord();
-			cout << endl;
 
 			
 		}
