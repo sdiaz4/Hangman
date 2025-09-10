@@ -78,10 +78,11 @@ namespace hangman {
 					output.mistakes(mistakes, totalMistakes);
 					cout << endl;
 					output.clue(clues);
-				}
-				if (wrongLetters.size() > 0)
-				{
-					output.wrongLetters(wrongLetters);
+
+					if (wrongLetters.size() > 0)
+					{
+						output.wrongLetters(wrongLetters);
+					}
 				}
 				cout << endl;
 
