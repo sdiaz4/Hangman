@@ -67,7 +67,12 @@ namespace hangman {
 					}
 					
 				}
-				
+				else {
+					state.addMistakes(mistakes);
+					if (!state.alreadyAsked(letter, wrongLetters)) {
+						state.addWrongLetter(letter, wrongLetters);
+					}
+				}
 
 				if (!state.lostGame(mistakes, totalMistakes)) {
 					if (!state.wonGame(secretWord, clues)) {
