@@ -83,8 +83,8 @@ namespace hangman {
 					{
 						output.wrongLetters(wrongLetters);
 					}
+					cout << endl;
 				}
-				cout << endl;
 
 				if (state.wonGame(secretWord, clues)) {
 					output.win(secretWord);
