@@ -18,7 +18,7 @@ namespace IO {
 		cin >> difficulty;
 		for (int i = 0; i < difficulty.size(); i++)
 		{
-			difficulty.at(i) = tolower(difficulty.at(i));
+			difficulty.at(i) = toupper(difficulty.at(i));
 		}
 
 
@@ -31,7 +31,7 @@ namespace IO {
 		cin >> secretWord;
 		for (int i = 0; i < secretWord.size(); ++i)
 		{
-			secretWord.at(i) = tolower(secretWord.at(i));
+			secretWord.at(i) = toupper(secretWord.at(i));
 		}
 		return secretWord;
 	}
@@ -39,14 +39,18 @@ namespace IO {
 	char Input::guessLetter() {
 		char letter;
 		cin >> letter;
-		letter = tolower(letter);
+		letter = toupper(letter);
 		return letter;
 		
 	}
 
 
 	void Output::title() {
-		cout << "Hangman" << endl << "_______";
+		vector<char> line = { '_','_', '_', '_', '_', '_', '_' };
+		cout << "Hangman" << endl;
+		for (int i = 0; i < line.size(); ++i) {
+			cout << line.at(i);
+		}
 	}
 
 	void Output::mistakes(int mistakes, int totalMistakes) {

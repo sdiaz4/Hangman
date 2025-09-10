@@ -15,9 +15,9 @@ namespace hangman {
 
 
 	State::Modes State::convertMode(string mode) {
-		if (mode == "easy")
+		if (mode == "EASY")
 			return Modes::easy;
-		else if (mode == "regular")
+		else if (mode == "REGULAR")
 			return Modes::regular;
 		else
 			return Modes::hard;
