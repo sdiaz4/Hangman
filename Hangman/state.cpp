@@ -112,7 +112,7 @@ namespace hangman {
 	}
 
 	bool State::isNormalOrHard(string mode) {
-		if (mode == "easy")
+		if (mode == "EASY")
 			return false;
 		else
 			return true;
