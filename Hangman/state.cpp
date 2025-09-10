@@ -3,11 +3,13 @@
 #include <cctype>
 #include <vector>
 #include "state.hpp"
+#include <algorithm>
 using std::cin;
 using std::cout;
 using std::string;
 using std::endl;
 using std::vector;
+using std::sort;
 
 
 
@@ -96,6 +98,7 @@ namespace hangman {
 
 	vector<char> State::addWrongLetter(char letter, vector<char>& letters) {
 		letters.push_back(letter);
+		sort(letters.begin(), letters.end());
 		return letters;
 	}
 
