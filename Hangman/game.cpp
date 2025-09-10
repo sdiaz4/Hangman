@@ -74,9 +74,11 @@ namespace hangman {
 					}
 				}
 
-				output.mistakes(mistakes, totalMistakes);
-				cout << endl;
-				output.clue(clues);
+				if (!state.wonGame(secretWord, clues) || state.lostGame(mistakes, totalMistakes)) {
+					output.mistakes(mistakes, totalMistakes);
+					cout << endl;
+					output.clue(clues);
+				}
 				if (wrongLetters.size() > 0)
 				{
 					output.wrongLetters(wrongLetters);

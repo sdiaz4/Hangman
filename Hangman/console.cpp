@@ -46,11 +46,7 @@ namespace IO {
 
 
 	void Output::title() {
-		vector<char> line = { '_','_', '_', '_', '_', '_', '_' };
-		cout << "Hangman" << endl;
-		for (int i = 0; i < line.size(); ++i) {
-			cout << line.at(i);
-		}
+		cout << "Hangman" << endl << "-------";
 	}
 
 	void Output::mistakes(int mistakes, int totalMistakes) {
@@ -72,12 +68,12 @@ namespace IO {
 	}
 
 	void Output::win(string name) {
-		cout << "You Won!" << endl;
+		cout << "You won!" << endl;
 		cout << "The word was: " << name;
 	}
 
 	void Output::wrongLetters(vector<char> letters) {
-		cout << "Wrong: ";
+		cout << "Wrong:    ";
 		for (int i = 0; i < letters.size(); ++i) {
 			cout << letters.at(i);
 		}
