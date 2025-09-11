@@ -59,27 +59,27 @@ namespace hangman {
 					vector<int> locations = state.findLetter(secretWord, letter);
 					state.changeClue(letter, locations, clues);
 
-					if (state.isNormalOrHard(difficulty)) {
-
-						if (!state.alreadyAsked(letter, rightLetter)) {
-							state.addRightLetter(letter, rightLetter);
-						}
-						else  {
-							state.addMistakes(mistakes);
-						}
-					}
-					
-				}
-				else {
 					if (!state.alreadyAsked(letter, rightLetter)) {
+						state.addRightLetter(letter, rightLetter);
+					}
+					else if (state.isNormalOrHard(difficulty))  {
 						state.addMistakes(mistakes);
 					}
-					else if (!state.alreadyAsked(letter, wrongLetters)) {
-						state.addWrongLetter(letter, wrongLetters);
-					}
-					
-					
 				}
+					
+				
+				else {
+					if (!state.alreadyAsked(letter, wrongLetters)) {
+						state.addWrongLetter(letter, wrongLetters);
+						state.addMistakes(mistakes);
+					}
+					if (!state.isNormalOrHard(difficulty)) {
+						state.addMistakes(mistakes);
+					}
+
+				}
+				
+					
 
 				if (!state.lostGame(mistakes, totalMistakes)) {
 					if (!state.wonGame(secretWord, clues)) {
