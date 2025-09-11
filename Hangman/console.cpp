@@ -84,5 +84,4 @@ namespace IO {
 		cout << "Guess: " << letter << endl;
 	}
 
-	
 }
