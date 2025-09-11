@@ -71,12 +71,13 @@ namespace hangman {
 					
 				}
 				else {
-					if (!state.alreadyAsked(letter, wrongLetters)) {
-						state.addWrongLetter(letter, wrongLetters);
-					}
 					if (!state.alreadyAsked(letter, rightLetter)) {
 						state.addMistakes(mistakes);
 					}
+					else if (!state.alreadyAsked(letter, wrongLetters)) {
+						state.addWrongLetter(letter, wrongLetters);
+					}
+					
 					
 				}
 
