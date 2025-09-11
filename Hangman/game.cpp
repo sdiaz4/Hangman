@@ -73,7 +73,7 @@ namespace hangman {
 						state.addWrongLetter(letter, wrongLetters);
 						state.addMistakes(mistakes);
 					}
-					if (!state.isNormalOrHard(difficulty)) {
+					if (state.isNormalOrHard(difficulty)) {
 						state.addMistakes(mistakes);
 					}
 
