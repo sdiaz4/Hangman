@@ -71,7 +71,7 @@ namespace hangman {
 					
 				}
 				else {
-
+					state.addMistakes(mistakes);
 					if (!state.alreadyAsked(letter, wrongLetters)) {
 						state.addWrongLetter(letter, wrongLetters);
 						state.addMistakes(mistakes);
