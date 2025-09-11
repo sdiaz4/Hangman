@@ -57,11 +57,20 @@ namespace hangman {
 				if (state.letterFound(secretWord, letter)) {
 					vector<int> locations = state.findLetter(secretWord, letter);
 					state.changeClue(letter, locations, clues);
-					if (!state.alreadyAsked(letter, rightLetter)) {
-						state.addRightLetter(letter, rightLetter);
+					if (state.isNormalOrHard(difficulty)) {
+						if (!state.alreadyAsked(letter, rightLetter)) {
+							state.addRightLetter(letter, rightLetter);
+						}
+						else if (!state.alreadyAsked(letter, rightLetter)) {
+							state.addMistakes(mistakes);
+						}
 					}
-					else if (state.isNormalOrHard(difficulty)) {
-						state.addMistakes(mistakes);
+					
+				}
+				else {
+					state.addMistakes(mistakes);
+					if (!state.alreadyAsked(letter, wrongLetters)) {
+						state.addWrongLetter(letter, wrongLetters);
 					}
 				}
 
