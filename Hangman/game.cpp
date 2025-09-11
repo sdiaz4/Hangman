@@ -55,22 +55,26 @@ namespace hangman {
 				cout << endl;
 
 				if (state.letterFound(secretWord, letter)) {
+
 					vector<int> locations = state.findLetter(secretWord, letter);
 					state.changeClue(letter, locations, clues);
+
 					if (state.isNormalOrHard(difficulty)) {
+
 						if (!state.alreadyAsked(letter, rightLetter)) {
 							state.addRightLetter(letter, rightLetter);
 						}
-						else if (!state.alreadyAsked(letter, rightLetter)) {
+						else  {
 							state.addMistakes(mistakes);
 						}
 					}
 					
 				}
 				else {
-					state.addMistakes(mistakes);
+
 					if (!state.alreadyAsked(letter, wrongLetters)) {
 						state.addWrongLetter(letter, wrongLetters);
+						state.addMistakes(mistakes);
 					}
 				}
 
