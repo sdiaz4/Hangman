@@ -74,7 +74,10 @@ namespace hangman {
 					if (!state.alreadyAsked(letter, wrongLetters)) {
 						state.addWrongLetter(letter, wrongLetters);
 					}
-					state.addMistakes(mistakes);
+					if (!state.alreadyAsked(letter, rightLetter)) {
+						state.addMistakes(mistakes);
+					}
+					
 				}
 
 				if (!state.lostGame(mistakes, totalMistakes)) {
